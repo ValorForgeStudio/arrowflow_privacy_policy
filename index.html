@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy – Arrow Flow</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Sora:wght@600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:        #14131d;  /* app surface_bg (night) */
+      --surface:   #201e2e;  /* app surface_card (night) */
+      --border:    #302d44;
+      --accent:    #818cf8;  /* brand indigo — arrows */
+      --accent2:   #2dd4bf;  /* goal teal — goals */
+      --amber:     #fbbf24;  /* hint amber accent */
+      --text:      #ecebf5;  /* app on_surface (night) */
+      --muted:     #9690ae;
+      --badge-bg:  #211f38;  /* indigo-tinted panel */
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', system-ui, sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
+      min-height: 100vh;
+    }
+
+    /* ── Header ── */
+    header {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 28px 24px;
+      text-align: center;
+    }
+
+    .logo-wrap {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+
+    .logo-icon {
+      width: 44px;
+      height: 44px;
+      background: #312e81;            /* matches the launcher-icon background */
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .logo-icon svg {
+      width: 32px;
+      height: 32px;
+    }
+
+    .logo-name {
+      font-family: 'Sora', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--text);
+      letter-spacing: -0.01em;
+    }
+
+    header h1 {
+      font-family: 'Sora', sans-serif;
+      font-size: clamp(1.6rem, 4vw, 2.2rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      background: linear-gradient(135deg, var(--accent) 0%, var(--accent2) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 10px;
+    }
+
+    .meta {
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    .badge {
+      display: inline-block;
+      background: var(--badge-bg);
+      color: var(--accent);
+      border: 1px solid var(--accent);
+      border-radius: 20px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      padding: 3px 12px;
+      margin-top: 14px;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+    }
+
+    /* ── Main ── */
+    main {
+      max-width: 740px;
+      margin: 0 auto;
+      padding: 48px 24px 80px;
+    }
+
+    .intro-card {
+      background: var(--badge-bg);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--accent);
+      border-radius: 10px;
+      padding: 20px 24px;
+      margin-bottom: 40px;
+      font-size: 0.97rem;
+      color: var(--text);
+    }
+
+    .intro-card strong {
+      color: var(--accent);
+    }
+
+    section {
+      margin-bottom: 36px;
+    }
+
+    section h2 {
+      font-family: 'Sora', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    section h2::before {
+      content: '';
+      display: block;
+      width: 4px;
+      height: 18px;
+      background: linear-gradient(180deg, var(--accent), var(--accent2));
+      border-radius: 2px;
+      flex-shrink: 0;
+    }
+
+    section p {
+      color: var(--muted);
+      font-size: 0.97rem;
+    }
+
+    .highlight-box {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 18px 22px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .highlight-box .check-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 8px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .highlight-box .check-item:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .check-item .icon {
+      color: var(--accent2);
+      font-size: 1rem;
+      margin-top: 2px;
+      flex-shrink: 0;
+    }
+
+    .divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 36px 0;
+    }
+
+    /* ── Contact card ── */
+    .contact-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px 28px;
+    }
+
+    .contact-card h2 {
+      font-family: 'Sora', sans-serif;
+      font-size: 1.05rem;
+      margin-bottom: 10px;
+    }
+
+    .contact-card p {
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-bottom: 14px;
+    }
+
+    .contact-card a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .contact-card a:hover {
+      text-decoration: underline;
+    }
+
+    /* ── Footer ── */
+    footer {
+      text-align: center;
+      padding: 24px;
+      font-size: 0.82rem;
+      color: var(--muted);
+      border-top: 1px solid var(--border);
+    }
+
+    footer a {
+      color: var(--muted);
+      text-decoration: none;
+    }
+
+    @media (max-width: 600px) {
+      main { padding: 32px 16px 60px; }
+      header { padding: 22px 16px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo-wrap">
+    <div class="logo-icon">
+      <!-- App launcher chevron (same path as ic_launcher_foreground) -->
+      <svg viewBox="0 0 108 108" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M36,30 L52,30 L78,54 L52,78 L36,78 L52,54 Z" fill="#a5b4fc" />
+      </svg>
+    </div>
+    <span class="logo-name">Arrow Flow</span>
+  </div>
+  <h1>Privacy Policy</h1>
+  <p class="meta">Valor Forge Studio</p>
+  <div class="badge">✓ No data collected</div>
+</header>
+
+<main>
+
+  <div class="intro-card">
+    <strong>Short version:</strong> Arrow Flow does not collect, store, or share any personal information. Your gameplay stays entirely on your device.
+  </div>
+
+  <section>
+    <h2>Information We Collect</h2>
+    <p>Arrow Flow does not collect any personal information from its users. We do not require account registration, and we do not request access to any sensitive data on your device.</p>
+  </section>
+
+  <section>
+    <h2>What We Do Not Do</h2>
+    <div class="highlight-box">
+      <div class="check-item">
+        <span class="icon">✓</span>
+        <span>We do not collect your name, email address, or any personal identifiers.</span>
+      </div>
+      <div class="check-item">
+        <span class="icon">✓</span>
+        <span>We do not track your location.</span>
+      </div>
+      <div class="check-item">
+        <span class="icon">✓</span>
+        <span>We do not use analytics or crash-reporting tools that send data off your device.</span>
+      </div>
+      <div class="check-item">
+        <span class="icon">✓</span>
+        <span>We do not display advertisements or use any ad networks.</span>
+      </div>
+      <div class="check-item">
+        <span class="icon">✓</span>
+        <span>We do not share any data with third parties.</span>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Data Storage</h2>
+    <p>All game progress and settings (such as completed levels and preferences) are saved locally on your device only. This data never leaves your device and is not accessible to us.</p>
+  </section>
+
+  <section>
+    <h2>Third-Party Services</h2>
+    <p>Arrow Flow does not integrate any third-party SDKs, analytics platforms, advertising networks, or social login services. Your experience is entirely self-contained.</p>
+  </section>
+
+  <section>
+    <h2>Children's Privacy</h2>
+    <p>Because Arrow Flow collects no personal information whatsoever, it is safe for users of all ages. We do not knowingly collect data from children or any other users.</p>
+  </section>
+
+  <section>
+    <h2>Changes to This Policy</h2>
+    <p>If we ever update Arrow Flow in a way that changes how data is handled, we will update this page and revise the effective date below. We encourage you to review this policy periodically.</p>
+  </section>
+
+  <hr class="divider" />
+
+  <div class="contact-card">
+    <h2>Contact Us</h2>
+    <p>If you have any questions or concerns about this privacy policy, feel free to reach out to us.</p>
+    <p>
+      <strong>Valor Forge Studio</strong><br />
+      Email: <a href="mailto:valorforgestudio@gmail.com">valorforgestudio@gmail.com</a>
+    </p>
+  </div>
+
+</main>
+
+<footer>
+  <p>Effective date: June 10, 2026 &nbsp;·&nbsp; &copy; 2026 Valor Forge Studio &nbsp;·&nbsp; Arrow Flow</p>
+</footer>
+
+</body>
+</html>
